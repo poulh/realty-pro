@@ -42,5 +42,41 @@
   "RegisteredUser": {
     "dataSource": "db",
     "public": true
+  },
+  "Container": {
+    "dataSource": "listingFile",
+    "public": true
+  },
+  "Contact": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Address": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Agent": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Listing": {
+    "dataSource": "db",
+    "public": true
+  },
+  "ListingAgent": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Ownership": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Investor": {
+    "dataSource": "db",
+    "public": true
+  },
+  "ListingPrice": {
+    "dataSource": "db",
+    "public": true
   }
 }

@@ -1,0 +1,40 @@
+{
+  "name": "Ownership",
+  "plural": "Ownerships",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "startDate": {
+      "type": "date",
+      "required": true
+    },
+    "endDate": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "investors": {
+      "type": "hasMany",
+      "model": "Investor",
+      "foreignKey": "ownerId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "address": {
+      "type": "belongsTo",
+      "model": "Address",
+      "foreignKey": "addressId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

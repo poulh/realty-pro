@@ -1,0 +1,28 @@
+{
+  "name": "Agent",
+  "plural": "Agents",
+  "base": "Contact",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "mlsNumber": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "listings": {
+      "type": "hasMany",
+      "model": "Listing",
+      "foreignKey": "agentId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "ListingAgent"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

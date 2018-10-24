@@ -1,0 +1,61 @@
+{
+  "name": "Listing",
+  "plural": "Listings",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "startDate": {
+      "type": "date",
+      "required": true
+    },
+    "endDate": {
+      "type": "date",
+      "required": true
+    },
+    "mlsNumber": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "listingAgents": {
+      "type": "hasMany",
+      "model": "Agent",
+      "foreignKey": "listingId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "ListingAgent"
+    },
+    "seller": {
+      "type": "belongsTo",
+      "model": "Ownership",
+      "foreignKey": "sellerId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "address": {
+      "type": "hasMany",
+      "model": "Address",
+      "foreignKey": "addressId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "Ownership"
+    },
+    "listingPrices": {
+      "type": "hasMany",
+      "model": "ListingPrice",
+      "foreignKey": "listingId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

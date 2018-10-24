@@ -1,0 +1,37 @@
+{
+  "name": "ListingPrice",
+  "plural": "Prices",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "value": {
+      "type": "number",
+      "required": true
+    },
+    "currency": {
+      "type": "string",
+      "required": true,
+      "default": "USD"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "listing": {
+      "type": "belongsTo",
+      "model": "Listing",
+      "foreignKey": "listingId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
