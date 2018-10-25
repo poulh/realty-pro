@@ -1,0 +1,28 @@
+{
+  "name": "Partnership",
+  "plural": "Partnerships",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "partners": {
+      "type": "hasMany",
+      "model": "Partner",
+      "foreignKey": "partnershipId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

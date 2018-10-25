@@ -1,62 +1,64 @@
 {
-  "name": "Listing",
-  "plural": "Listings",
+  "name": "ListingOffer",
+  "plural": "ListingOffers",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "startDate": {
+    "date": {
       "type": "date",
       "required": true
     },
-    "endDate": {
-      "type": "date",
+    "price": {
+      "type": "number",
       "required": true
     },
-    "mlsNumber": {
-      "type": "string"
+    "currency": {
+      "type": "string",
+      "required": true,
+      "default": "USD"
     }
   },
   "validations": [],
   "relations": {
-    "listingAgent": {
+    "listing": {
+      "type": "belongsTo",
+      "model": "Listing",
+      "foreignKey": "listingId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "purchasingAgent": {
       "type": "belongsTo",
       "model": "Agent",
-      "foreignKey": "listerId",
+      "foreignKey": "agentId",
       "options": {
         "nestRemoting": true
       }
     },
-    "listingPartners": {
+    "purchasingAgents": {
       "type": "belongsTo",
       "model": "Partnership",
-      "foreignKey": "listerId",
+      "foreignKey": "agentId",
       "options": {
         "nestRemoting": true
       }
     },
-    "seller": {
+    "buyer": {
       "type": "belongsTo",
-      "model": "Owner",
-      "foreignKey": "sellerId",
+      "model": "Contact",
+      "foreignKey": "buyerId",
       "options": {
         "nestRemoting": true
       }
     },
-    "listingPrices": {
-      "type": "hasMany",
-      "model": "ListingPrice",
-      "foreignKey": "listingId",
-      "options": {
-        "nestRemoting": true
-      }
-    },
-    "offers": {
-      "type": "hasMany",
-      "model": "ListingOffer",
-      "foreignKey": "listingId",
+    "buyers": {
+      "type": "belongsTo",
+      "model": "Partnership",
+      "foreignKey": "buyerId",
       "options": {
         "nestRemoting": true
       }

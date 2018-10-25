@@ -63,19 +63,27 @@
     "dataSource": "db",
     "public": true
   },
-  "ListingAgent": {
-    "dataSource": "db",
-    "public": false
-  },
-  "Ownership": {
+  "Partnership": {
     "dataSource": "db",
     "public": true
   },
-  "Investor": {
+  "Partner": {
     "dataSource": "db",
     "public": true
   },
   "ListingPrice": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Owner": {
+    "dataSource": "db",
+    "public": true
+  },
+  "ListingOffer": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Note": {
     "dataSource": "db",
     "public": true
   }

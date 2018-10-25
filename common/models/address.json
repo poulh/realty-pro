@@ -43,8 +43,16 @@
     },
     "owners": {
       "type": "hasMany",
-      "model": "Ownership",
-      "foreignKey": "addressId",
+      "model": "Owner",
+      "foreignKey": "assetId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "notes": {
+      "type": "hasMany",
+      "model": "Note",
+      "foreignKey": "parentId",
       "options": {
         "nestRemoting": true
       }

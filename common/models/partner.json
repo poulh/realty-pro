@@ -1,0 +1,37 @@
+{
+  "name": "Partner",
+  "plural": "Partners",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "share": {
+      "type": "number",
+      "required": true,
+      "default": 1
+    }
+  },
+  "validations": [],
+  "relations": {
+    "contact": {
+      "type": "belongsTo",
+      "model": "Contact",
+      "foreignKey": "contactId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "partnership": {
+      "type": "belongsTo",
+      "model": "Partnership",
+      "foreignKey": "partnershipId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,36 +1,27 @@
 {
-  "name": "ListingPrice",
-  "plural": "Prices",
+  "name": "Note",
+  "plural": "Notes",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "startDate": {
+    "date": {
       "type": "date",
       "required": true
     },
-    "endDate": {
-      "type": "date",
-      "required": true
-    },
-    "value": {
-      "type": "number",
-      "required": true
-    },
-    "currency": {
+    "text": {
       "type": "string",
-      "required": true,
-      "default": "USD"
+      "required": true
     }
   },
   "validations": [],
   "relations": {
-    "listing": {
+    "author": {
       "type": "belongsTo",
-      "model": "Listing",
-      "foreignKey": "listingId",
+      "model": "RegisteredUser",
+      "foreignKey": "authorId",
       "options": {
         "nestRemoting": true
       }

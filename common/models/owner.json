@@ -1,6 +1,6 @@
 {
-  "name": "Ownership",
-  "plural": "Ownerships",
+  "name": "Owner",
+  "plural": "Owners",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -18,18 +18,18 @@
   },
   "validations": [],
   "relations": {
-    "investors": {
-      "type": "hasMany",
-      "model": "Investor",
+    "owner": {
+      "type": "belongsTo",
+      "model": "Contact",
       "foreignKey": "ownerId",
       "options": {
         "nestRemoting": true
       }
     },
-    "address": {
+    "owningPartners": {
       "type": "belongsTo",
-      "model": "Address",
-      "foreignKey": "addressId",
+      "model": "Partnership",
+      "foreignKey": "ownerId",
       "options": {
         "nestRemoting": true
       }
