@@ -11,7 +11,12 @@
           <i class="fas fa-home"></i>
           <span translate>Home</span>
         </a>
-        <a *ngIf="roleChecker.is('admin')" class="nav-item nav-link text-uppercase" routerLink="/admin" routerLinkActive="active">
+        <a class="nav-item nav-link text-uppercase" routerLink="/listings" routerLinkActive="active">
+          <i class="fas fa-home"></i>
+          <span translate>Listings</span>
+        </a>
+        <a *ngIf="roleChecker.is('admin')" class="nav-item nav-link text-uppercase" routerLink="/admin"
+          routerLinkActive="active">
           <i class="fas fa-cog"></i>
           <span translate>Admin</span>
         </a>

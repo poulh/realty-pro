@@ -10,6 +10,7 @@ import { environment } from '@env/environment';
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { AdminModule } from './admin/admin.module';
+import { RealtyProModule } from './realty-pro/realty-pro.module';
 import { UserProfileModule } from './user-profile/user-profile.module';
 import { HomeModule } from './home/home.module';
 import { ShellModule } from './shell/shell.module';
@@ -33,6 +34,7 @@ import { SDKBrowserModule } from '../../sdk';
     HomeModule, //HomeModule ( or whatever the default tab is ) needs to be right after Shell, so its routing rules get hit first
     AboutModule,
     AdminModule,
+    RealtyProModule,
     UserProfileModule,
     LoginModule,
     AppRoutingModule,
