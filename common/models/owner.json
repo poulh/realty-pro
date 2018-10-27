@@ -7,13 +7,12 @@
     "validateUpsert": true
   },
   "properties": {
-    "startDate": {
+    "purchaseDate": {
       "type": "date",
       "required": true
     },
-    "endDate": {
-      "type": "date",
-      "required": true
+    "sellDate": {
+      "type": "date"
     }
   },
   "validations": [],
@@ -30,6 +29,14 @@
       "type": "belongsTo",
       "model": "Partnership",
       "foreignKey": "ownerId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "asset": {
+      "type": "belongsTo",
+      "model": "Address",
+      "foreignKey": "assetId",
       "options": {
         "nestRemoting": true
       }

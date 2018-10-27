@@ -1,3 +1,44 @@
-<p>
-  listings works!
-</p>
+<div class="my-3 p-3 bg-white rounded box-shadow">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="pb-2 mb-0">Listings</h4>
+    </div>
+  </div>
+
+  <div class="row border-bottom border-gray pb-2 mb-0">
+
+    <div class="col-sm-0 col-md-9 col-lg-10 mt-2">
+    </div>
+
+    <div class="col-sm-12 col-md-3 col-lg-2 mt-2">
+      <a class="btn btn-success w-100" routerLink="/listing">Create Listing</a>
+    </div>
+
+  </div>
+
+  <div *ngFor="let listing of listings" class="media text-muted pt-3">
+
+    <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+
+      <div class="row">
+        <div class="col-sm-12 col-md-4">
+          <strong class="text-gray-dark">
+            <span>{{listing.mlsNumber}}</span>
+          </strong>
+        </div>
+
+        <div class="col-sm-0 col-md-5 col-lg-6">
+        </div>
+
+        <div class="col-sm-12 col-md-3 col-lg-2">
+          <div class="btn-group float-right w-100" role="group" aria-label="Sorting">
+            <a class="btn btn-primary w-100">Edit Listing</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

@@ -25,6 +25,30 @@
       "options": {
         "nestRemoting": true
       }
+    },
+    "listings": {
+      "type": "hasMany",
+      "model": "Listing",
+      "foreignKey": "accountId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "addresses": {
+      "type": "hasMany",
+      "model": "Address",
+      "foreignKey": "addressId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "contacts": {
+      "type": "hasMany",
+      "model": "Contact",
+      "foreignKey": "accountId",
+      "options": {
+        "nestRemoting": true
+      }
     }
   },
   "acls": [
