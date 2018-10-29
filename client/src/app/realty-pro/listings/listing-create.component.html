@@ -1,0 +1,73 @@
+<div>
+  <div class="row">
+    <div class="card col-md-10 mt-2 mx-auto">
+      <div class="card-body">
+        <h4 class="card-title text-center">
+          <i class="far fa-3x fa-home text-muted"></i>
+        </h4>
+        <form (ngSubmit)="updateOrCreateAddress()" [formGroup]="addressForm" novalidate>
+          <div class="alert alert-danger" [hidden]="!error || isLoading" translate>
+            Username or password incorrect.
+          </div>
+          <div class="form-group">
+
+            <label class="d-block">
+              <span [ngClass]="(addressForm.controls.street.valid || addressForm.controls.street.untouched ) ? '' : 'text-danger'"
+                translate>Address</span>
+              <input type="text" class="form-control" formControlName="street" />
+            </label>
+
+            <label class="d-block">
+              <span [ngClass]="(addressForm.controls.street2.valid || addressForm.controls.street2.untouched ) ? '' : 'text-danger'"
+                translate>Address 2</span>
+              <input type="text" class="form-control" formControlName="street2" />
+            </label>
+
+            <label class="d-block">
+              <span [ngClass]="(addressForm.controls.city.valid || addressForm.controls.city.untouched ) ? '' : 'text-danger'"
+                translate>City</span>
+              <input type="text" class="form-control" formControlName="city" />
+            </label>
+
+            <label class="d-block">
+              <span [ngClass]="(addressForm.controls.state.valid || addressForm.controls.state.untouched ) ? '' : 'text-danger'"
+                translate>State</span>
+              <input type="text" class="form-control" formControlName="state" />
+            </label>
+
+
+            <label class="d-block">
+              <span [ngClass]="(addressForm.controls.zip.valid || addressForm.controls.zip.untouched ) ? '' : 'text-danger'"
+                translate>Zipcode</span>
+              <input type="text" class="form-control" formControlName="zip" />
+            </label>
+
+            <form [formGroup]="miscForm" novalidate>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" formControlName="ownerOccupied" />
+                  <span translate>Owner Occupied</span>
+                </label>
+              </div>
+            </form>
+
+            <label class="d-block">
+              <span translate>&nbsp;</span>
+              <button class="btn btn-primary w-100" type="submit" [disabled]="addressForm.pristine || addressForm.invalid || isLoading">
+                <i class="fas fa-cog fa-spin" [hidden]="!isLoading"></i>
+                <span translate>Next: Seller Info</span>
+              </button>
+            </label>
+          </div>
+        </form>
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+</div>
