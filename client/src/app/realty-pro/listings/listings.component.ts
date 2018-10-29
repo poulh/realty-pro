@@ -26,19 +26,6 @@ export class ListingsComponent implements OnInit {
 
     this.listingApi.find<Listing>(listingFilter).subscribe(listings => {
       this.listings = listings
-
-      const partnershipFilter = {
-        where: { id: listings[0].seller.owningPartners.id },
-        include: ['partners']
-      };
-
-      console.log(partnershipFilter)
-
-      const partnerFilter = {
-        where: { partnershipId: listings[0].seller.owningPartners.id }
-      }
-
-      console.log(partnerFilter)
     })
 
   }

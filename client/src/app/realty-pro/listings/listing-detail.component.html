@@ -1,3 +1,67 @@
-<p>
-  listing-detail works!
-</p>
+<div *ngIf="listing" class="my-3 p-3 bg-white rounded box-shadow">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="pb-2 mb-0">{{listing.seller.asset.street}} {{listing.seller.asset.street2}}</h4>
+    </div>
+  </div>
+
+  <div class="row border-bottom border-gray pb-2 mb-0">
+    <div class="col-sm-0 col-md-12 mt-2">
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="card col-md-9 mt-2 mx-auto">
+      <div class="card-body">
+        <h4 class="card-title text-center">
+          <i class="far fa-3x fa-home text-muted"></i>
+        </h4>
+
+
+        <label class="d-block">
+          <strong translate>Property Address:</strong>
+          <span translate>{{listing.seller.asset.street}} {{listing.seller.asset.street2}}
+            {{listing.seller.asset.city}}, {{listing.seller.asset.state}} {{listing.seller.asset.zip}}</span>
+        </label>
+
+
+        <label class="d-block">
+          <strong translate>Seller's:</strong>
+          <span translate>{{listing.seller.owningPartners.name}}</span>
+        </label>
+
+        <div *ngFor="let partner of listing.seller.owningPartners.partners" class="row pl-3">
+          <div class="col-md-6">
+            <label class="d-block">
+              <strong translate>Name:</strong>
+              <span translate>{{partner.contact.firstName}} {{partner.contact.lastName}}</span>
+            </label>
+          </div>
+          <div class="col-md-6">
+            <label class="d-block">
+              <strong translate>Phone:</strong>
+              <span translate>{{partner.contact.mobilePhone}}</span>
+            </label>
+          </div>
+          <div class="col-md-6">
+            <label class="d-block">
+              <strong translate>Address:</strong>
+              <span translate>Need to add seller address</span>
+            </label>
+          </div>
+          <div class="col-md-6">
+            <label class="d-block">
+              <strong translate>Email:</strong>
+              <span translate>{{partner.contact.email}}</span>
+            </label>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+</div>
